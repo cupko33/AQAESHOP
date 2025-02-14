@@ -1,64 +1,64 @@
 export class HomePage {
-    logo(): Cypress.Chainable {
+    logo() {
         return cy.get('[href="/"] > .md\:ml-4');
     };
 
-    dashboardButton(): Cypress.Chainable {
+    dashboardButton() {
         return cy.get('.ml-4 > .md\:ml-4');
     }
    
-    register(): Cypress.Chainable {
+    register() {
         return cy.get(('a').contains('Register'));
     };
 
-    logIn(): Cypress.Chainable {
+    logIn() {
         return cy.get('#loginBtn');
     };
 
-    mainTitle(): Cypress.Chainable {
+    mainTitle() {
         return cy.get('.text-5xl');
     };
     
-    subTitle(): Cypress.Chainable {
+    subTitle() {
         return cy.get('.text-left > .text-xl'); 
     }
 
-    robotImg(): Cypress.Chainable {
+    robotImg() {
         return cy.get('.md\:ml-auto');
     };
 
-    signUp(): Cypress.Chainable {
+    signUp() {
         return cy.get('.md\:col-12 > .align-items-center > .bg-gray-200');
     };
 
-    copyrightLink(): Cypress.Chainable {
+    copyrightLink() {
         return cy.get('span.sm\:text-sm'); 
     }
 
-    linkedin(): Cypress.Chainable {
+    linkedin() {
         return cy.get('[href="https://www.linkedin.com/company/automaticity-it/mycompany/"] > .pi');
     }
 
-    instagram(): Cypress.Chainable {
+    instagram() {
         return cy.get('[href="https://www.instagram.com/automaticity.qa/"] > .pi');
     }
 
-    mailTo(): Cypress.Chainable {
+    mailTo() {
         return cy.get('[href="mailto:office@automaticity.rs"] > .pi');
     }
-    facebook(): Cypress.Chainable {
+    facebook() {
         return cy.get('[href="https://www.facebook.com/automaticity.qa"] > .pi');
     };
 
-    text1(): Cypress.Chainable {
+    text1() {
         return cy.get('.mb-2');
     }
 
-    text2(): Cypress.Chainable {
+    text2() {
         return cy.get('.md\:col-12 > .mb-4');
     }
 
-    text3(): Cypress.Chainable {
+    text3() {
         return cy.get('.mt-6');
 
     }
