@@ -5,5 +5,6 @@ export const URLs = {
     copyright: 'https://automaticity.rs/',
     linkedin: 'https://www.linkedin.com/company/automaticity-it/',
     instagram: 'https://www.instagram.com/automaticity.qa/',
-    facebook: 'https://www.facebook.com/automaticity.qa'
+    facebook: 'https://www.facebook.com/automaticity.qa',
+    dashboard: 'https://automaticityacademy.ngrok.app/dashboard'
   };

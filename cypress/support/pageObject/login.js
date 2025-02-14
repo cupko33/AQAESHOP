@@ -31,14 +31,20 @@ export class LoginPage {
        return cy.get(':nth-child(2) > .block') ;
     };
 
-    passwordFiel(){
+    passwordField(){
         return cy.get('#password');
     }
+
     forgotPasswordLink() {
         return cy.get('.align-items-center > .font-medium');
     }
-    sighInButton() {
+
+    signInButton() {
         return cy.get('.flex-column > .w-full');
+    }
+
+    warningText() {
+        return cy.get('.text-sm');
     }
    
 }
