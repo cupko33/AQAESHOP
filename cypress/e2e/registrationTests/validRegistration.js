@@ -26,7 +26,7 @@ describe('User Registration', () => {
     
 
     // Validate successful registration
-    cy.url().should('eq', URLs.dashboard');
+    cy.url().should('eq', URLs.dashboard);
     
     // Close window
   cy.window().then((win) => {
