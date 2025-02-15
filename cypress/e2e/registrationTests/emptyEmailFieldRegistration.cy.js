@@ -5,8 +5,8 @@ import { generateUser } from '../../fixtures/environments/testData';
 import { Warnings } from '../../fixtures/environments/assertions';
 
 
-describe('User Registration', () => {
-  it('should successfully register with valid details', () => {
+describe('User Registration - empty email', () => {
+  it('should show warning when Email field is empty', () => {
 
   const homePage = new HomePage();
   const registrationPage =  new Registration;

@@ -5,7 +5,7 @@ import { generateUser } from '../../fixtures/environments/testData';
 import { Warnings } from '../../fixtures/environments/assertions';
 
 
-describe('User Registration', () => {
+describe('User Registration - empty username', () => {
   it('should show warning when Username field is empty', () => {
 
   const homePage = new HomePage();
