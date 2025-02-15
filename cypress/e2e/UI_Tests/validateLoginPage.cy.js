@@ -25,9 +25,9 @@ describe('UI Validation Login Page', () => {
   loginPage.emailField().should('be.visible', 'have.attr', 'placeholder', 'Email address');
   loginPage.passwordFieldLabel().should('be.visible');
   loginPage.passwordFieldLabel().contains('Password');
-  loginPage.passwordFiel().should('be.visible', 'have.attr', 'placeholder', 'Password');
+  loginPage.passwordField().should('be.visible', 'have.attr', 'placeholder', 'Password');
   loginPage.forgotPasswordLink().should('be.visible');
-  loginPage.sighInButton().should('be.visible');
+  loginPage.signInButton().should('be.visible');
   
   // Close window
   cy.window().then((win) => {

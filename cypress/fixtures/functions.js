@@ -1,5 +1,5 @@
 
-import { Dashboard } from '../support/pageObject/dashboard';
+import { Dashboard } from '../support/pageObject/logout';
 import { LoginPage } from '../support/pageObject/login';
 import { LoginCredentials } from './testData';
 import { URLs } from './links';

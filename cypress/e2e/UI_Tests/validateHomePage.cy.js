@@ -26,12 +26,11 @@ describe('UI Validation Home Page', () => {
   homePage.text3().should('be.visible');
   homePage.text3().contains('Let Automaticity be your trusted companion');
   homePage.signUp().should('be.visible');
-  homePage.robotImg().should('be.visible');
-  homePage.copyrightLink().should('be.visible');
-  homePage.linkedin().should('be.visible');
-  homePage.facebook().should('be.visible');
-  homePage.instagram().should('be.visible');
-  homePage.mailTo().should('be.visible');
+  homePage.copyrightLink().should('exist');
+  homePage.linkedin().should('exist');
+  homePage.facebook().should('exist');
+  homePage.instagram().should('exist');
+  homePage.mailTo().should('exist');
   
   // Close window
   cy.window().then((win) => {

@@ -1,14 +1,14 @@
 export class HomePage {
     logo() {
-        return cy.get('[href="/"] > .md\:ml-4');
+        return cy.get('img').should('have.attr', 'src', '/images/logo/-white.png');;
     };
 
     dashboardButton() {
-        return cy.get('.ml-4 > .md\:ml-4');
+        return cy.get('.ml-4');
     }
    
     register() {
-        return cy.get(('a').contains('Register'));
+        return cy.get('.mr-2 > [href="https://automaticityacademy.ngrok.app/register"]');
     };
 
     logIn() {
@@ -24,30 +24,31 @@ export class HomePage {
     }
 
     robotImg() {
-        return cy.get('.md\:ml-auto');
+        return cy.get('img').should('have.attr', 'src', '/images/hero/gearhead.webp');
     };
 
     signUp() {
-        return cy.get('.md\:col-12 > .align-items-center > .bg-gray-200');
+        return cy.get('.p-button');
     };
 
     copyrightLink() {
-        return cy.get('span.sm\:text-sm'); 
+        return cy.get('a[href="https://www.automaticity.rs/"]');
     }
 
     linkedin() {
-        return cy.get('[href="https://www.linkedin.com/company/automaticity-it/mycompany/"] > .pi');
+        return cy.get('a[href="https://www.linkedin.com/company/automaticity-it/mycompany/"]');
+        
     }
 
     instagram() {
-        return cy.get('[href="https://www.instagram.com/automaticity.qa/"] > .pi');
+        return cy.get('a[href="https://www.instagram.com/automaticity.qa/"]');
     }
 
     mailTo() {
-        return cy.get('[href="mailto:office@automaticity.rs"] > .pi');
+        return cy.get('a[href="mailto:office@automaticity.rs"]');
     }
     facebook() {
-        return cy.get('[href="https://www.facebook.com/automaticity.qa"] > .pi');
+        return cy.get('a[href="https://www.facebook.com/automaticity.qa"]');
     };
 
     text1() {
@@ -55,7 +56,7 @@ export class HomePage {
     }
 
     text2() {
-        return cy.get('.md\:col-12 > .mb-4');
+        return cy.get('.mb-4');
     }
 
     text3() {

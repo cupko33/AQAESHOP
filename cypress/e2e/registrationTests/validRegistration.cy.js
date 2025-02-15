@@ -2,7 +2,7 @@ import { URLs } from '../../fixtures/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
 import { generateUser } from '../../fixtures/testData';
-import { Dashboard } from '../../support/pageObject/dashboard';
+import { Logout } from '../../support/pageObject/logout';
 
 
 describe('User Registration', () => {
@@ -10,7 +10,7 @@ describe('User Registration', () => {
 
   const homePage = new HomePage();
   const registrationPage =  new Registration;
-  const dashboard = new Dashboard();
+  const logout = new Logout();
   const user = generateUser();
 
     cy.visit(URLs.base);

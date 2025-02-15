@@ -49,4 +49,4 @@ export class LoginPage {
    
 }
 
-export default new Login();
+//export default new Login();

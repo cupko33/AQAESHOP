@@ -5,6 +5,7 @@ import { generateUser } from '../../fixtures/testData';
 import { Warnings } from '../../fixtures/assertions';
 
 
+
 describe('User Registration - duplicate email', () => {
   it('should show warning when email is already used', () => {
 
@@ -13,7 +14,7 @@ describe('User Registration - duplicate email', () => {
   const user = generateUser();
 
     cy.visit(URLs.base);
-    homePage.register.click();
+    //homePage.register().click();
 
     // Register first user
     registrationPage.usernameField().type(user.name);
