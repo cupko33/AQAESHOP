@@ -15,7 +15,7 @@ describe('User Registration', () => {
 
 
     cy.visit(URLs.base);
-    homePage.register.click();
+    homePage.register().click();
 
     // Fill in the registration form
     registrationPage.usernameField().type(user.name);

@@ -42,4 +42,9 @@ export class Registration {
     registerButton() {
         return cy.get('.flex > .w-full') ;
     }
-};
+
+    warningBelowEmailField() {
+        return cy.get('.text-sm') ;
+    }
+}
+
