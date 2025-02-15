@@ -1,8 +1,8 @@
-import { URLs } from '../../fixtures/environments/links';
+import { URLs } from '../../fixtures/links';
 import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
-import { Warnings } from '../../fixtures/environments/assertions';
-import { LoginCredentials } from '../../fixtures/environments/testData';
+import { Warnings } from '../../fixtures/assertions';
+import { LoginCredentials } from '../../fixtures/testData';
 
 
 describe('Invalid Email in Login', () => {

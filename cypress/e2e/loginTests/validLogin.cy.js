@@ -1,7 +1,7 @@
-import { URLs } from '../../fixtures/environments/links';
+import { URLs } from '../../fixtures/links';
 import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
-import { LoginCredentials } from '../../fixtures/environments/testData';
+import { LoginCredentials } from '../../fixtures/testData';
 import { Dashboard } from '../../support/pageObject/dashboard';
 
 describe('Valid Login', () => {

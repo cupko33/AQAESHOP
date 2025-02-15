@@ -1,7 +1,7 @@
-import { URLs } from '../../fixtures/environments/links';
+import { URLs } from '../../fixtures/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
-import { generateUser } from '../../fixtures/environments/testData';
+import { generateUser } from '../../fixtures/testData';
 import { Dashboard } from '../../support/pageObject/dashboard';
 
 

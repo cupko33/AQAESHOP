@@ -1,8 +1,8 @@
-import { URLs } from '../../fixtures/environments/links';
+import { URLs } from '../../fixtures/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
-import { generateUser } from '../../fixtures/environments/testData';
-import { Warnings } from '../../fixtures/environments/assertions';
+import { generateUser } from '../../fixtures/testData';
+import { Warnings } from '../../fixtures/assertions';
 
 
 describe('User Registration - duplicate username', () => {

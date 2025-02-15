@@ -1,4 +1,4 @@
-import { URLs } from '../../fixtures/environments/links';
+import { URLs } from '../../fixtures/links';
 import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
 
