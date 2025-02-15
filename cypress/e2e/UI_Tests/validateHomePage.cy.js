@@ -1,13 +1,11 @@
 
 import { URLs } from '../../fixtures/environments/links';
-import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
 
 
 describe('UI Validation Home Page', () => {
   it('should validate the existence of elements on the page', () => {
 
-  const loginPage = new LoginPage();
   const homePage = new HomePage();
   
   cy.visit(URLs.base);
