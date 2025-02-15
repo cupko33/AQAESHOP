@@ -2,6 +2,7 @@ import { URLs } from '../../fixtures/environments/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
 import { generateUser } from '../../fixtures/environments/testData';
+import { Warnings } from '../../fixtures/environments/assertions';
 
 
 describe('User Registration', () => {
@@ -17,19 +18,16 @@ describe('User Registration', () => {
 
     // Fill in the registration form
     registrationPage.usernameField().type(user.name);
-    registrationPage.emailField().type(user.email);
     registrationPage.passwordField().type(user.password);
     
-
     // Submit the form
     registrationPage.registerButton().click();
     
-
-    // Validate successful registration
-    cy.url().should('eq', URLs.dashboard);
+    // Validate warnign shown
+    registrationPage.warningText().contains(Warnings.emptyEmailWarning);
     
     // Close window
-  cy.window().then((win) => {
+    cy.window().then((win) => {
     win.close();
     }); 
   });
