@@ -2,7 +2,7 @@ import { URLs } from '../../fixtures/links';
 import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
 import { LoginCredentials } from '../../fixtures/testData';
-import { Logout } from '../../support/pageObject/logout';
+import { Dashboard } from '../../support/pageObject/dashboard';
 
 
 describe('Valid Login', () => {
@@ -10,7 +10,7 @@ describe('Valid Login', () => {
 
   const loginPage = new LoginPage();
   const homePage = new HomePage();
-  const logout = new Logout();
+  const dashboard= new Dashboard();
 
   cy.visit(URLs.base);
   homePage.logIn().click();
@@ -22,8 +22,10 @@ describe('Valid Login', () => {
   cy.url().should('eq', URLs.dashboard);
   
   // Logout
-  logout();
-
+  dashboard.hamburgerMenu().click();
+  dashboard.logoutButton().click();
+  cy.url().should('include', URLs.base);
+  
   cy.window().then((win) => {
     win.close();
     });

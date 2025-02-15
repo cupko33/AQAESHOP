@@ -2,7 +2,7 @@ import { URLs } from '../../fixtures/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
 import { generateUser } from '../../fixtures/testData';
-import { Logout } from '../../support/pageObject/logout';
+import { Dashboard } from '../../support/pageObject/dashboard';
 
 
 describe('User Registration', () => {
@@ -10,8 +10,9 @@ describe('User Registration', () => {
 
   const homePage = new HomePage();
   const registrationPage =  new Registration;
-  const logout = new Logout();
   const user = generateUser();
+  const dashboard= new Dashboard();
+
 
     cy.visit(URLs.base);
     homePage.register.click();
@@ -27,8 +28,10 @@ describe('User Registration', () => {
     // Validate successful registration
     cy.url().should('eq', URLs.dashboard);
 
-    //Logout
-    logout();
+    // Logout
+    dashboard.hamburgerMenu().click();
+    dashboard.logoutButton().click();
+    cy.url().should('include', URLs.base);
     
     // Close window
     cy.window().then((win) => {
