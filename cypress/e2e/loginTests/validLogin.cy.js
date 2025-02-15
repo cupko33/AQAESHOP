@@ -2,7 +2,7 @@ import { URLs } from '../../fixtures/environments/links';
 import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
 import { LoginCredentials } from '../../fixtures/environments/testData';
-import { Dashboard } from '../../support/pageObject/dashchboard';
+import { Dashboard } from '../../support/pageObject/dashboard';
 
 describe('Valid Login', () => {
   it('should validate user can login in with valid credentials', () => {

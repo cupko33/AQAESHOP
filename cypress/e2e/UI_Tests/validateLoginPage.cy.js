@@ -3,7 +3,7 @@ import { LoginPage } from '../../support/pageObject/login';
 import { HomePage } from '../../support/pageObject/homePage';
 
 
-describe('UI Validation LoginPage', () => {
+describe('UI Validation Login Page', () => {
   it('should validate the existence of elements on the page', () => {
 
   const loginPage = new LoginPage();
