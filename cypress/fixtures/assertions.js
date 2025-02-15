@@ -8,3 +8,8 @@ export const Warnings = {
     usedUsernameWarning: 'The username has already been taken.',
     notEnoughCharPasswordWarning: 'The password field must be at least 6 characters.'
   };
+
+  export const ToasterText = {
+    productAddedToCart: "Product added successfully!"
+
+  }

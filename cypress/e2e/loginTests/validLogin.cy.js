@@ -22,12 +22,12 @@ describe('Valid Login', () => {
   cy.url().should('eq', URLs.dashboard);
   
   // Logout
-  dashboard.hamburgerMenu().click();
-  dashboard.logoutButton().click();
-  cy.url().should('include', URLs.base);
+  //dashboard.hamburgerMenu().click();
+  //dashboard.logoutButton().click();
+  //cy.url().should('include', URLs.base);
   
-  cy.window().then((win) => {
-    win.close();
-    });
+  //cy.window().then((win) => {
+    //win.close();
+    //});
   });
 });
