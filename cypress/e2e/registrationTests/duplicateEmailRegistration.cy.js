@@ -39,7 +39,7 @@ describe('User Registration - duplicate email', () => {
     registrationPage.registerButton().click();
 
     // Validate warning shown
-    registrationPage.warningBelowEmailField().contains(Warnings.usedEmailWarning);
+    registrationPage.warningBelowField().contains(Warnings.usedEmailWarning);
     
     // Close window
     cy.window().then((win) => {
