@@ -14,12 +14,14 @@ describe('Valid Login', () => {
   cy.visit(URLs.base);
   homePage.logIn().click();
   
+  // Enter valid credentials and login
   loginPage.emailField().type(LoginCredentials.validEmail);
   loginPage.passwordField().type(LoginCredentials.validPassword);
   loginPage.signInButton().click();
   cy.url().should('eq', URLs.dashboard);
-  dashboard.hamburger().click();
-  dashboard.logout().click();
+  
+  // Logout
+  logout();
 
   cy.window().then((win) => {
     win.close();

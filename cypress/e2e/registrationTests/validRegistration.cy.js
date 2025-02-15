@@ -28,8 +28,7 @@ describe('User Registration', () => {
     cy.url().should('eq', URLs.dashboard);
 
     //Logout
-    dashboard.hamburger().click();
-    dashboard.logout().click();
+    logout();
     
     // Close window
     cy.window().then((win) => {
