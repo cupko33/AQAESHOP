@@ -10,7 +10,6 @@ describe('User Registration - empty username', () => {
 
   const homePage = new HomePage();
   const registrationPage =  new Registration;
-  const dashboard = new Dashboard();
   const user = generateUser();
 
     cy.visit(URLs.base);
@@ -24,7 +23,7 @@ describe('User Registration - empty username', () => {
     registrationPage.registerButton().click();
     
     // Validate warning
-    registrationPage.warningText().contains(Warnings.emptyUsernameWarning)
+    registrationPage.warningBelowField().contains(Warnings.emptyUsernameWarning);
 
     // Close window
     cy.window().then((win) => {

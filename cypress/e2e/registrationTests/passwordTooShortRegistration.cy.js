@@ -13,7 +13,7 @@ describe('User Registration - password without enough characters', () => {
   const user = generateUser();
 
     cy.visit(URLs.base);
-    homePage.register.click();
+    homePage.register().click();
 
     // Fill in the registration form
     registrationPage.usernameField().type(user.name);
@@ -24,8 +24,8 @@ describe('User Registration - password without enough characters', () => {
     registrationPage.registerButton().click();
 
     // Validate warning shown
-    registrationPage.warningText().contains(Warnings.notEnoughCharPasswordWarning)
-    
+    registrationPage.warningBelowField().contains(Warnings.notEnoughCharPasswordWarning);
+
     // Close window
     cy.window().then((win) => {
     win.close();
