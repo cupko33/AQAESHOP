@@ -2,34 +2,40 @@ import { URLs } from '../../fixtures/environments/links';
 import { HomePage } from '../../support/pageObject/homePage';
 import { Registration } from '../../support/pageObject/registration';
 import { generateUser } from '../../fixtures/environments/testData';
-import { Dashboard } from '../../support/pageObject/dashboard';
+import { Warnings } from '../../fixtures/environments/assertions';
 
 
-describe('User Registration', () => {
-  it('should successfully register with valid details', () => {
+describe('User Registration - duplicate username', () => {
+  it('should show warning when username is already used', () => {
 
   const homePage = new HomePage();
   const registrationPage =  new Registration;
-  const dashboard = new Dashboard();
   const user = generateUser();
 
     cy.visit(URLs.base);
     homePage.register.click();
 
-    // Fill in the registration form
+    // Register first user
     registrationPage.usernameField().type(user.name);
     registrationPage.emailField().type(user.email);
     registrationPage.passwordField().type(user.password);
     
-    // Submit the form
+    // Submit the form and validate page
     registrationPage.registerButton().click();
-
-    // Validate successful registration
     cy.url().should('eq', URLs.dashboard);
 
     //Logout
     dashboard.hamburger().click();
     dashboard.logout().click();
+
+    // Register with the same username but a different email
+    registrationPage.usernameField().type(user.name);
+    registrationPage.emailField().type(`new${user.email}`);
+    registrationPage.passwordField().type(user.password);
+    registrationPage.registerButton().click();
+
+    // Validate warning shown
+    registrationPage.warningText().contains(Warnings.usedUsernameWarning)
     
     // Close window
     cy.window().then((win) => {
