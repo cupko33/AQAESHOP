@@ -7,7 +7,6 @@ import { URLs } from './links';
 export const logout = () => {
   Dashboard.hamburgerMenu.click();
   Dashboard.logoutButton.click();
-
   cy.url().should('include', URLs.base);
 };
 
