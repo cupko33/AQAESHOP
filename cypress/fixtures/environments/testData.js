@@ -6,3 +6,13 @@ export const LoginCredentials = {
     wrongEmailFormat: 'cupkovic17yahoo.com'
   };
 
+
+  export const generateUser = () => {
+    const randomString = Math.random().toString(36).substring(2, 8);
+    
+    return {
+      name: `User${randomString}`,
+      email: `testuser${randomString}@test.com`,
+      password: `Pass${randomString}!123`,
+    };
+  };

@@ -17,7 +17,7 @@ describe('Valid Login', () => {
   loginPage.emailField().type(LoginCredentials.validEmail);
   loginPage.passwordField().type(LoginCredentials.validPassword);
   loginPage.signInButton().click();
-  cy.url(URLs.dashboard);
+  cy.url().should('eq', URLs.dashboard);
   dashboard.hamburger().click();
   dashboard.logout().click();
 
