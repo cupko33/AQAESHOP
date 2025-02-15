@@ -13,3 +13,9 @@ export const Warnings = {
     productAddedToCart: "Product added successfully!"
 
   }
+
+  export const InfoText = {
+    infoText1CartStep1: "Free of charge: one never pays here.",
+    infoText2CartStep1: "Not with money.",
+    infoTextCartStep2: "Yes... Keep giving me your data..."
+  }
