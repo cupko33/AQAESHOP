@@ -1,8 +1,4 @@
-export class Dashboard {
-  
-};
-
-class Logout {
+class Dashboard {
     get hamburgerMenu() {
       return cy.get('.relative > div > span.inline-flex > .inline-flex'); 
     }

@@ -48,3 +48,5 @@ export class LoginPage {
     }
    
 }
+
+export default new Login();
