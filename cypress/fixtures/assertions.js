@@ -19,6 +19,6 @@ export const Warnings = {
   export const InfoText = {
     infoText1CartStep1: "Free of charge: one never pays here.",
     infoText2CartStep1: "Not with money.",
-    infoTextCartStep2and3: "Yes... Keep giving me your data...",
+    infoTextCartStep2: "Please, call me the devil.",
     
   }

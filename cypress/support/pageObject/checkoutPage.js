@@ -2,7 +2,7 @@ export class CheckoutPage {
     
     // Review Step
     progress() {
-        return cy.get('.flex .justify-center .py-4'); 
+        return cy.get('.py-4'); 
       }
     
     infoText() {
@@ -10,25 +10,26 @@ export class CheckoutPage {
       }
 
     salesmanImg() {
-        return cy.get('img').should('have.attr', 'src', '/images/hero/lucius.png');
+        return cy.get('.ml-auto');
     };
   
     textInCloud1() {
-        return cy.get('.ml-auto .p-button .p-component');
+        return cy.get('.p-4 > :nth-child(1)');
       }
       
     nextBtn1() {
-        return cy.get('.p-button-label .p-c').should('have.attr', 'label', 'Next step');
+        return cy.get('.bg-gray-200 > .p-button-label');
       }
   
       // Shipping Step
   
       textInCloud2() {
-        return cy.get('.bg-white .p-4 .my-6');
+        return cy.get('p');
       }
 
       makeChangesBtn() {
-        return cy.get('.p-button-label .p-c').should('have.attr', 'label', 'Make changes');
+        return cy.get('[aria-label="Make changes"]');
+        
       }
 
       firstNameField() {
@@ -64,7 +65,7 @@ export class CheckoutPage {
       }
 
       updateBtn() {
-        return cy.get('.p-button-label .p-c').should('have.attr', 'aria-label', 'Update');
+        return cy.get('[aria-label="Update"]');
       }
 
     

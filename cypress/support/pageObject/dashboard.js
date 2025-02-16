@@ -13,7 +13,7 @@ export class Dashboard {
     }
 
     addToCartButton() {
-      return cy.get('.ml-auto .p-button .p-component');
+      return cy.get('.px-1.ml-auto.p-button.p-component');
     }
 
     successToaster() {
@@ -21,11 +21,11 @@ export class Dashboard {
     }
 
     shoppingCartButton() {
-      return cy.get('.inline-flex .rounded-md');
+      return cy.get('.flex > :nth-child(1) > .inline-flex');
     }
 
     shoppingCartSideBar() {
-      return cy.get('.sidebar .open');
+      return cy.get('.sidebar > .flex-1');
     }
 
     cartText() {
@@ -45,7 +45,7 @@ export class Dashboard {
     }
 
    checkoutButton() {
-    return cy.get('.button').contains('Checkout');
+    return cy.get('.mt-auto > .flex > .bg-gray-200');
    }
 
     totalPrice() {

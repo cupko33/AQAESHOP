@@ -6,5 +6,7 @@ export const URLs = {
     linkedin: 'https://www.linkedin.com/company/automaticity-it/',
     instagram: 'https://www.instagram.com/automaticity.qa/',
     facebook: 'https://www.facebook.com/automaticity.qa',
-    dashboard: 'https://automaticityacademy.ngrok.app/dashboard'
+    dashboard: 'https://automaticityacademy.ngrok.app/dashboard',
+    checkout: 'https://automaticityacademy.ngrok.app/checkout',
+    
   };

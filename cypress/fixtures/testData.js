@@ -19,7 +19,7 @@ export const LoginCredentials = {
 
 
   export const shopItems = {
-    existingItemInStock: 'AMD Ryzen 9 5900X',
+    existingItemInStock: 'blackwidow',
     nonExistingItem: 'blah',
     
   };
