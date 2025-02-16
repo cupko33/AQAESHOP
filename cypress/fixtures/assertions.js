@@ -20,5 +20,5 @@ export const Warnings = {
     infoText1CartStep1: "Free of charge: one never pays here.",
     infoText2CartStep1: "Not with money.",
     infoTextCartStep2: "Please, call me the devil.",
-    
+    infoTextCartStep3: "Yes... Keep giving me your data...",
   }

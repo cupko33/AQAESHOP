@@ -64,11 +64,14 @@ export class CheckoutPage {
         return cy.get('#country');
       }
 
-      updateBtn() {
+      updateBtn1() {
         return cy.get('[aria-label="Update"]');
       }
 
-    
+      nextBtn2() {
+        return cy.get('[type="submit"]');
+      }
+      
       // Billing Step
 
       cardHolderField() {
@@ -79,12 +82,8 @@ export class CheckoutPage {
         return cy.get('#card_type');
       }
 
-      cardTypeField() {
+      cardNumberField() {
         return cy.get('#card_number');
-      }
-
-      cvvField() {
-        return cy.get('#cvv');
       }
 
       cvvField() {
@@ -99,16 +98,19 @@ export class CheckoutPage {
         return cy.get('#card_expiration_year');
       }
 
-      
-      placeOrderBtn() {
-        return cy.get('.bg-white .text-primary').should('have.attr', 'aria-label', 'Place your order!');
+      nextBtn3() {
+        return cy.get('[type="submit"]');;
       }
 
+      updateBtn2() {
+        return cy.get('button[aria-label="Update"]');
+      }
 
       // Finalize Purchase Step
 
       shippingInformationCard() {
         return cy.get('.max-w-7xl > :nth-child(1)');
+
       }
 
       firstNameShip() {
@@ -177,6 +179,10 @@ export class CheckoutPage {
 
       totalPrice() {
         return cy.get(':nth-child(3) > .mt-4 > :nth-child(2)');
+      }
+
+      placeOrderBtn() {
+        return cy.get('.bg-white > .p-button-label');
       }
 
 }

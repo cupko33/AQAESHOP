@@ -7,7 +7,8 @@ import { HomePage } from '../../support/pageObject/homePage';
 import { LoginCredentials } from '../../fixtures/testData';
 import { Dashboard } from '../../support/pageObject/dashboard';
 import { CheckoutPage } from '../../support/pageObject/checkoutPage';
-import { faker } from '@faker-js/faker';
+import { da, faker } from '@faker-js/faker';
+import { generateUserShippingData } from '../../fixtures/testData';
 
 
 describe('User purchases an item from Shop', () => {
@@ -17,6 +18,9 @@ describe('User purchases an item from Shop', () => {
   const homePage = new HomePage();
   const dashboard= new Dashboard();
   const checkout= new CheckoutPage();
+  const nextYear = new Date().getFullYear() + 1;
+  const userShippingData = generateUserShippingData();
+  
 
   cy.visit(URLs.base);
   homePage.logIn().click();
@@ -27,7 +31,8 @@ describe('User purchases an item from Shop', () => {
   loginPage.signInButton().click();
   cy.url().should('eq', URLs.dashboard);
 
-  // Search for an item
+  
+  //Search for an item
   cy.wait(8000);
   dashboard.searchField().click();
   dashboard.searchField().type(shopItems.existingItemInStock, { delay: 100 });
@@ -59,35 +64,64 @@ describe('User purchases an item from Shop', () => {
   checkout.textInCloud2().contains(InfoText.infoTextCartStep2);
   checkout.makeChangesBtn().click();
 
-  checkout.firstNameField().clear().type(faker.person.firstName()); 
-  checkout.lastNameField().clear().type(faker.person.lastName());
+  checkout.firstNameField().clear({ force: true });
+  checkout.firstNameField().type(faker.person.firstName(), { delay: 100 });
+  checkout.lastNameField().clear().type(faker.person.lastName(), { delay: 100 });
   checkout.emailField().clear().type(faker.internet.email());
-  checkout.phoneNumberField().clear().type(faker.phone.number('##########'));
+  checkout.phoneNumberField().clear().type(userShippingData.phoneNumber);
   checkout.streetAndNumberField().clear().type(faker.location.streetAddress()); 
-  checkout.postalCodeField().clear().type(faker.location.zipCode());
+  checkout.postalCodeField().clear().type(userShippingData.postalCode);
   checkout.cityField().clear().type(faker.location.city()); 
   checkout.countryField().clear().type(faker.location.country()); 
 
-  checkout.updateBtn().click();
-
-
-
-
+  checkout.updateBtn1().click();
+  cy.wait(5000);
+  checkout.nextBtn2().click({ force: true });
   
+  //Validate elements on Billing step and fill in data
+  checkout.progress().should('be.visible');
+  checkout.salesmanImg().should('be.visible');
+  checkout.textInCloud1().should('be.visible');
+  checkout.textInCloud1().contains(InfoText.infoTextCartStep3);
+  checkout.makeChangesBtn().click({ force: true });
 
+  checkout.cardHolderField().clear({ force: true });
+  checkout.cardHolderField().type(faker.person.fullName(), { delay: 100 });
+  checkout.cardTypeField().click();
+  cy.contains('li', 'Visa').click();
+  checkout.cardNumberField().clear().type(faker.finance.creditCardNumber('4###-####-####-###L'));
+  checkout.cvvField().clear().type(faker.finance.creditCardCVV('###'));
+  checkout.cardExpirationMonthField().click();
+  cy.contains('li', '7').click();
+  checkout.cardExpirationYearField().click();
+  cy.contains('li', '2030').click();
+
+  checkout.updateBtn2().click({ force: true });
+
+  checkout.nextBtn3().click({ force: true });
+
+  //Validate Finalize step
+  checkout.shippingInformationCard().should('be.visible');
+  checkout.billingInformationCard().should('be.visible');
+  checkout.itemInformationCard().should('be.visible');
+  checkout.salesmanImg().should('be.visible');
+  checkout.placeOrderBtn().should('be.visible');
   
+  // Place order
+  checkout.placeOrderBtn().click();
+
+  // Validate dashboard opens again
+  cy.url().should('eq', URLs.dashboard);
 
 
 
-
-  
   // Logout
-  //dashboard.hamburgerMenu().click();
-  //dashboard.logoutButton().click();
-  //cy.url().should('include', URLs.base);
+  dashboard.hamburgerMenu().click();
+  dashboard.logoutButton().click();
+  cy.url().should('include', URLs.base);
   
   //cy.window().then((win) => {
-    //win.close();
-    //});
-  });
+    win.close();
+    }); 
+  }); 
 });
