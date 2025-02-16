@@ -12,6 +12,15 @@ export class Dashboard {
       return cy.get('#search');
     }
 
+    productName() {
+      return cy.get('a > .text-sm');
+    }
+
+    productPrice() {
+      return cy.get('.border-t-2 > .font-semibold');
+    }
+
+
     addToCartButton() {
       return cy.get('.px-1.ml-auto.p-button.p-component');
     }
@@ -40,7 +49,11 @@ export class Dashboard {
       return cy.get('.flex .flex-column');
     }
 
-    itemName() {
+    cartProductName() {
+      return cy.get('.my-1 .text-primary');
+    }
+
+    cartProductPrice() {
       return cy.get('.my-1 .text-primary');
     }
 

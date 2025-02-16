@@ -110,38 +110,37 @@ export class CheckoutPage {
 
       shippingInformationCard() {
         return cy.get('.max-w-7xl > :nth-child(1)');
-
       }
 
-      firstNameShip() {
+      reviewFirstName() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(1) > .font-semibold');
       }
 
-      lastNameShip() {
+      reviewLastName() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(2) > .font-semibold');
       }
 
-      emailShip() {
+      reviewEmail() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(3) > .font-semibold');
       }
 
-      phoneShip() {
+      reviewPhone() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(4) > .font-semibold');
       }
 
-      streetAndNumberShip() {
+      reviewAddress() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(5) > .font-semibold');
       }
 
-      cityShip() {
+      reviewCity() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(6) > .font-semibold');
       }
 
-      postalCodeShip() {
+      reviewPostalCode() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(7) > .font-semibold');
       }
 
-      countryShip() {
+      reviewCountry() {
         return cy.get(':nth-child(1) > .mt-4 > :nth-child(8) > .font-semibold');
       }
 
@@ -149,23 +148,23 @@ export class CheckoutPage {
         return cy.get('.max-w-7xl > :nth-child(2)');
       }
 
-      cardHolderShip() {
+      reviewCardHolder() {
         return cy.get(':nth-child(2) > .mt-4 > :nth-child(1) > .font-semibold');
       }
 
-      cardTypeShip() {
+      reviewCardType() {
         return cy.get(':nth-child(2) > .mt-4 > :nth-child(2) > .font-semibold');
       }
 
-      cardNumberShip() {
+      reviewVardNumber() {
         return cy.get(':nth-child(2) > .mt-4 > :nth-child(3) > .font-semibold');
       }
 
-      cvvShip() {
+      reviewCvv() {
         return cy.get(':nth-child(2) > .mt-4 > :nth-child(4) > .font-semibold');
       }
       
-      expirationDateShip() {
+      reviewExpirationDate() {
         return cy.get(':nth-child(2) > .mt-4 > :nth-child(5) > .font-semibold');
       }
 
@@ -173,11 +172,11 @@ export class CheckoutPage {
         return cy.get('.max-w-7xl > :nth-child(3)');
       }
 
-      itemName() {
+      reviewProductName() {
         return cy.get('.border-b-2 > .flex > .font-semibold');
       }
 
-      totalPrice() {
+      reviewTotalPrice() {
         return cy.get(':nth-child(3) > .mt-4 > :nth-child(2)');
       }
 
