@@ -10,12 +10,15 @@ export const Warnings = {
   };
 
   export const ToasterText = {
-    productAddedToCart: "Product added successfully!"
+    productAddedToCart: "Product added successfully!",
+    shippingInfoUpdated: "Shipping information updated!",
+    billingInfoUpdated: "Billing information updated!"
 
   }
 
   export const InfoText = {
     infoText1CartStep1: "Free of charge: one never pays here.",
     infoText2CartStep1: "Not with money.",
-    infoTextCartStep2: "Yes... Keep giving me your data..."
+    infoTextCartStep2and3: "Yes... Keep giving me your data...",
+    
   }
