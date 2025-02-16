@@ -16,3 +16,10 @@ export const LoginCredentials = {
       password: `Pass${randomString}!123`,
     };
   };
+
+
+  export const shopItems = {
+    existingItemInStock: 'AMD Ryzen 9 5900X',
+    nonExistingItem: 'blah',
+    
+  };
