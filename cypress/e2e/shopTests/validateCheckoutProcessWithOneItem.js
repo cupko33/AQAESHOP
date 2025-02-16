@@ -7,7 +7,7 @@ import { HomePage } from '../../support/pageObject/homePage';
 import { LoginCredentials } from '../../fixtures/testData';
 import { Dashboard } from '../../support/pageObject/dashboard';
 import { CheckoutPage } from '../../support/pageObject/checkoutPage';
-import { da, faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { generateUserShippingData } from '../../fixtures/testData';
 
 
