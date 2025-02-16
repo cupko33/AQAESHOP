@@ -124,4 +124,3 @@ describe('User purchases an item from Shop', () => {
     win.close();
     }); 
   }); 
-});
